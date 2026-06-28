@@ -579,7 +579,7 @@ See [LICENSE](LICENSE) for the full text.
 | | |
 |---|---|
 | **Author** | Sami Ullah Khan |
-| **Email** | devsamikhan@gmail.com |
+| **Email** | samikhanniazi278@gmail.com |
 | **Website** | [devsamikhan.github.io](https://devsamikhan.github.io) |
 | **GitHub** | [@devsamikhan](https://github.com/devsamikhan) |
 
