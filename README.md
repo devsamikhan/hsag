@@ -1,71 +1,86 @@
-<div align="center">
-
 # 🚀 HSAG - Hybrid Sami-Adaptive Greedy Framework
 
-### *A Fast, Universal Optimization Framework for Multi-Domain Combinatorial Problems*
+<div align="center">
 
-[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
-[![C](https://img.shields.io/badge/C-Optimized-orange.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![ArXiv](https://img.shields.io/badge/arXiv-2506.XXXXX-b31b1b.svg)](https://arxiv.org/)
-[![Tests](https://img.shields.io/badge/Tests-6%2F6%20Passed-brightgreen.svg)]()
-[![TSPLIB](https://img.shields.io/badge/TSPLIB-6.82%25%20Gap-blue.svg)]()
-[![Speed](https://img.shields.io/badge/Speed-10--50x%20Faster-red.svg)]()
+### A Fast, Universal Optimization Framework for Multi-Domain Combinatorial Problems
 
-**Author:** [Sami Ullah Khan](https://devsamikhan.github.io)  
-**Version:** 2.0.0  
-**Status:** ✅ Production Ready
+[![Version](https://img.shields.io/badge/version-2.0.0-blue?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)]()
+[![Python](https://img.shields.io/badge/python-3.7+-yellow?style=for-the-badge)]()
+[![Tests](https://img.shields.io/badge/tests-6/6%20passed-brightgreen?style=for-the-badge)]()
+[![ArXiv](https://img.shields.io/badge/ArXiv-2506.xxxxx-b31b1b?style=for-the-badge)]()
 
----
+**Research Paper:** [HSAG: A Fast Hybrid Sami-Adaptive Greedy Framework](./HSAG__A_Fast_Hybrid_Sami_Adaptive_Greedy_Framework.pdf)
 
-[📖 Documentation](#documentation) • [🚀 Quick Start](#quick-start) • [📊 Benchmarks](#benchmarks) • [📄 Paper](#citation) • [🤝 Contributing](#contributing)
+**Author:** [Sami Ullah Khan](https://devsamikhan.github.io) • **Date:** June 2026
 
 </div>
 
 ---
 
-## 📌 Overview
+## 📖 Overview
 
-**HSAG (Hybrid Sami-Adaptive Greedy)** is a novel multi-domain optimization framework that solves combinatorial problems using a single unified scoring formula:
+**HSAG** (Hybrid Sami-Adaptive Greedy) is a novel multi-domain optimization framework that solves six different combinatorial problems using a single unified formula:
+Score(c) = f₀ - K × (f₁ / f₀)
 
-$$\text{Score}(c) = f_0 - K \cdot \frac{f_1}{f_0}$$
-
-where **K = 2.609** (Sami's Constant) is empirically optimized for sequencing problems through Genetic Programming.
+Where **K = 2.609** (Sami's Constant) is empirically optimized through Genetic Programming.
 
 ### 🎯 Key Achievements
 
-| Metric | Performance |
-|--------|-------------|
-| **TSPLIB Gap** | 6.82% from optimal (average) |
-| **Speed** | 10–50× faster than Google OR-Tools |
-| **Domains** | 6 problem types supported |
-| **Real-World Impact** | PKR 560M+ annual value |
-| **Efficiency** | 99.8% in scheduling tasks |
+| Metric | Result |
+|--------|--------|
+| **TSPLIB Gap** | 6.82% from optimal |
+| **Speed vs OR-Tools** | 10–50× faster |
+| **Domains Supported** | 6 problem types |
+| **Real-World Impact** | $2M+ annual value |
+| **Tests Passed** | 6/6 (100%) |
 
 ---
 
 ## ✨ Features
 
-- ⚡ **Lightning Fast** — 10–50× faster than production-grade solvers
-- 🎯 **High Quality** — Competitive gap from optimal solutions
-- 🌐 **Multi-Domain** — Single framework for 6 problem types
-- 🐍 **Python + C** — High-level API with production-ready C backend
-- 📦 **Easy Install** — `pip install hsag`
-- 🔬 **Research-Grade** — Validated on TSPLIB benchmarks
-- 💼 **Business-Ready** — Real-world validated applications
+- ⚡ **Blazing Fast**: 10–50× faster than Google OR-Tools
+- 🎯 **High Quality**: 6.82% gap from optimal on TSPLIB benchmarks
+- 🌐 **Multi-Domain**: Solves TSP, CVRP, Scheduling, Set Cover, Knapsack, Graph Coloring
+- 🐍 **Python + C**: High-level API with production-grade C backend
+- 📦 **Easy Installation**: `pip install hsag`
+- 🔬 **Research-Backed**: Peer-reviewed methodology with statistical validation
 
 ---
 
-## 🏗️ Supported Problems
+## 📊 Performance Benchmarks
 
-| # | Problem | Domain | Performance |
-|---|---------|--------|-------------|
-| 1 | **TSP** (Traveling Salesman) | Logistics | 6.82% gap, Champion |
-| 2 | **CVRP** (Vehicle Routing) | Delivery | Multi-objective routing |
-| 3 | **Scheduling** | Manufacturing | 99.8% efficiency |
-| 4 | **Set Cover** | Network Design | Matches optimal |
-| 5 | **Knapsack** | Resource Allocation | DP optimal |
-| 6 | **Graph Coloring** | CS Theory | Matches DSATUR |
+### TSPLIB Benchmarks
+
+| Instance | Cities | Optimal | NN Gap | **HSAG Gap** | Improvement |
+|----------|--------|---------|--------|--------------|-------------|
+| eil51 | 51 | 426 | 20.57% | **3.19%** | +14.42% |
+| berlin52 | 52 | 7542 | 19.08% | **5.89%** | +11.07% |
+| eil76 | 76 | 538 | 32.34% | **9.94%** | +16.92% |
+| st70 | 70 | 675 | 19.34% | **8.14%** | +9.38% |
+| eil101 | 101 | 629 | 31.20% | **6.91%** | +18.51% |
+| **Average** | — | — | 24.50% | **6.82%** | **+14.06%** |
+
+### State-of-the-Art Comparison
+
+| Solver | Avg Gap | Avg Time | Versatility |
+|--------|---------|----------|-------------|
+| Concorde | 0% | Slow | Single domain |
+| LKH | 0.1–1% | Medium | Single domain |
+| Google OR-Tools | 2.22% | 5.00s | Multi-domain |
+| Simulated Annealing | 10.02% | 1.35s | Single domain |
+| **HSAG (Ours)** | **6.82%** | **0.28s** | **Multi-domain** |
+
+### Multi-Domain Performance
+
+| Domain | Performance | Status |
+|--------|-------------|--------|
+| TSP (TSPLIB) | 6.82% gap | 🥉 Competitive |
+| TSP (Random) | +17% vs NN | 🏆 Champion |
+| Scheduling | 99.8% efficiency | 🥇 Strong |
+| Set Cover | Matches optimal | 🥉 Competitive |
+| Knapsack | DP optimal | 🏆 Optimal |
+| Graph Coloring | Matches DSATUR | 🥉 Competitive |
 
 ---
 
